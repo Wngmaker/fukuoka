@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container_content{
+    width: 10000px;
+    margin: 80px auto;
+    background-color:white;
+    color: 828180;
+    padding: 16px;
+}
+.container_content h2{
+    margin: 10px 0px;
+}
+.container_content p{
+    padding-bottom: 20px;
+    text-align: left;
+}
