@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Phân biệt "==" và "==="
+         ==: dùng để kiểm tra xem 2 phần tử có bằng nhau hay không,
+         nhưng nó chỉ xét về giá trị mà khoong quan tâm đến kiểu dữ liêu 2 phần tử đó 
+         vd: */
+        var x = 3;
+        var y = "3";
+        console.log(x == y);
+        /* Kết quả là "true",vì chỉ xét giá trị 3=3 */
+
+        /* ===: vẫn dùng để so sánh phần tử có bằng nhau hay không nhưng nghiêm ngặt hơn*/
+        var x = 3;
+        var y = "3";
+        console.log(x === y);
+        /* Kết quả là "false",vì có kiểu dữ liệu khác nhau là "number" và "sting" */
+    </script>
+</body>
+
+</html>
