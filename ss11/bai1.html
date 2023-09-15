@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number = [2, 3, 5, 2, 9];
+        let arr = number.sort((a, b) => {
+            return b - a; //[9,5,3,2,2]
+        })
+        let kiemTra = (arr) => {
+            if (arr[0] !== arr[1]) {
+                return arr[0];
+            } else {
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] !== arr[i + 1] && arr[i + 1] !== arr[i + 2]) {
+                        return arr[i + 1];
+                    }
+                }
+            }
+        }
+        console.log(`gia tri lon nhat cung la duy nhat : ${kiemTra(arr)}`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let string = prompt('nhap vao chuoi so va ca ky tu chu cai');
+        let arr = string.split('');
+        let result = arr.filter(kiemTra = (item) => {
+            return isNaN(item)
+        })
+
+        console.log(result.join(''));
+        // em cho chay nhung khong ra ket qua, thay check cho em hieu voi a
+    </script>
+</body>
+
+</html>
