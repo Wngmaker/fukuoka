@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <link rel="stylesheet" href="./index.css">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <!-- Tạo giao diện giống đề bài 
+        các bước làm:
+        1. tạo 1 mảng chứa 10 ảnh
+        2. tạo giao diện HTML như trên hình mẫu
+        3. dùng js đổi theme (k dùn HTML)
+
+    -->
+        <div class="container">
+            <div class="container__main">
+                <img class="container__main--show" src="./348365103_1959004601114026_8548870150713631734_n.jpeg" alt="">
+            </div>
+            <div class="container__images">
+                <ul class="container__images--list">
+                    <li class="btn">&#10094;</li> -->
+                    <li><img src="./img1/anh1.jpg" alt=""></li>
+                    <li><img src="./img1/anh2.jpg" alt=""></li>
+                    <li><img src="./img1/anh3.jpg" alt=""></li>
+                    <li><img src="./img1/anh4.jpeg" alt=""></li>
+                    <li><img src="./img1/anh5.jpeg" alt=""></li>
+                    <li><img src="./img1/anh6.jpeg" alt=""></li>
+                    <li><img src="./img1/anh7.jpeg" alt=""></li>
+                    <li><img src="./img1/anh8.jpeg" alt=""></li>
+                    <li><img src="./img1/anh9.jpeg" alt=""></li>
+                    <li><img src="./img1/anh10.jpeg" alt=""></li>
+                    <li class="btn-next"><span>&#10095;</span></li>
+
+                </ul>
+            </div>
+        </div>
+        <script>
+            let count = -1;
+            let images = [''];
+            // function render list ảnh
+            function renderImages(input) {
+                let text = '';
+                for (let index = 0; index < 9; index++) {
+                    if (index == 4) {
+                        text += `<li class ="img" onclick = 'chooseImg(${index})'><img src="${input[index]}" alt=""></li>`
+                        document.getElementsByClassName("container__main--show")[0].src = input[index];
+                    } else {
+                        text += `<li class ="img" onclick = 'chooseImg(${index})' style = 'opacity: 0.5' ><img src="${input[index]}" alt=""></li>`
+                    }
+                }
+                document.getElementsByClassName('container__images--list')[0].innerHTML =
+                    `
+               <li onclick = 'preImage()'class="btn">&#10094;</li>
+                    ${text}
+                <li onclick = 'nextImage()' class="btn next"><span>&#10095;</span></li>
+            `
+                if (count != -1) {
+                    let result = document.getElementsByClassName('img')1
+                    for (let j = 0; j < 9; j++) {
+                        if (j == count + 1) {
+                            document.getElementsByClassName('img')[j].style.opacity = 1;
+                        } else {
+                            document.getElementsByClassName('img')[j].style.opacity = 0.5;
+                        }
+                    }
+                    document.getElementsByClassName("container__main--show")[0].src = images[count + 1];
+                }
+            }
+            renderImages(images);
+            // chon anh tiep theo
+            /* 
+            let arr = [1,2,3,4,5];
+            sau khi shift() => [2,3,4,5,1]=>[3,4,5,1,2]=>...
+             */
+            function nextImage() {
+                let result = images.shift();
+                images.push(result);
+                renderImages(images);
+            }
+            function preImage() {
+                let result = images.pop();
+                images.unshift(result);
+                renderImages(images);
+            }
+            // Tạo hàm chọn ảnh để hiển thị
+            function chooseImg(detailImage) {
+                count = detailImage;
+                let result = document.getElementsByClassName('img');
+                for (let i = 0; i < 9; i++) {
+                    if (i == detailImage) {
+                        document.getElementsByClassName('img')[i].style.opacity = 1;
+                    } else {
+                        document.getElementsByClassName('img')[i].style.opacity = 0.5;
+                    }
+                }
+                document.getElementsByClassName("container__main--show")[0].src = images[detailImage];
+
+                
+            }
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>
